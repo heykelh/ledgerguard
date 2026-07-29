@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+# data (on ne versionne pas le dataset brut)
+data/
+*.duckdb
+# secrets
+.env
+# OS
+.DS_Store
