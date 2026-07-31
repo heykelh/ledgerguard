@@ -1,0 +1,8 @@
+loan_status,status_group,is_performing,n_loans,outstanding_exposure,pct_of_portfolio
+Fully Paid,Closed,true,1078039,15214403100.00,44.86
+Current,Open,true,875082,13937471925.00,41.09
+Charged Off,Closed,false,269106,4180661975.00,12.33
+Late (31-120 days),Open,false,21386,362140050.00,1.07
+In Grace Period,Open,true,8398,148261825.00,0.44
+Late (16-30 days),Open,false,4336,75411750.00,0.22
+Default,Closed,false,40,574025.00,0.0

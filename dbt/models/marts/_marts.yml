@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: rpt_credit_risk_by_grade
+    description: "Profil de risque par grade : exposition, taux moyen, DTI moyen, taux de défaut réalisé."
+    columns:
+      - name: grade
+        tests: [not_null, unique]
+      - name: default_rate_pct
+        tests:
+          - dbt_utils.accepted_range:
+              arguments: { min_value: 0, max_value: 100 }
+
+  - name: rpt_default_by_vintage
+    description: "Taux de défaut par millésime d'émission. pct_matured = part des prêts à l'issue connue."
+    columns:
+      - name: vintage_year
+        tests: [not_null, unique]
+      - name: default_rate_pct
+        tests:
+          - dbt_utils.accepted_range:
+              arguments: { min_value: 0, max_value: 100 }
+
+  - name: rpt_portfolio_by_status
+    description: "Encours et poids de chaque statut dans le portefeuille."
+    columns:
+      - name: loan_status
+        tests: [not_null, unique]
