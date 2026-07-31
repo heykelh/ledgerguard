@@ -1,0 +1,17 @@
+name: 'ledgerguard'
+version: '1.0.0'
+config-version: 2
+
+profile: 'ledgerguard'
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  raw_loans_file: "data/accepted_2007_to_2018Q4.csv.gz"
+
+models:
+  ledgerguard:
+    staging:
+      +materialized: table   # bronze matérialisé en table = le CSV n'est lu qu'une fois

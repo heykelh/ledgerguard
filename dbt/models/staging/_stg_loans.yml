@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: stg_loans
+    description: >
+      Bronze — prêts Lending Club acceptés (périmètre risque de crédit),
+      colonnes curées, valeurs brutes en VARCHAR, clé de substitution générée.
+    columns:
+      - name: loan_sk
+        description: "Clé de substitution unique du prêt (source sans ID exploitable)."
+        tests:
+          - not_null
+          - unique

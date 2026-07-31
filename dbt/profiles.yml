@@ -1,0 +1,7 @@
+ledgerguard:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ledgerguard.duckdb
+      threads: 4
