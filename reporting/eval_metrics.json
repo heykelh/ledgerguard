@@ -1,0 +1,23 @@
+{
+  "n_eval": 5900,
+  "confusion": {
+    "tp": 900,
+    "fp": 0,
+    "fn": 0,
+    "tn": 5000
+  },
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "recall_par_regle": {
+    "COHERENCE_funded_le_loan": 1.0,
+    "COMPLETUDE_amount": 1.0,
+    "COMPLETUDE_status": 1.0,
+    "PLAUSIBILITE_amount_positif": 1.0,
+    "PLAUSIBILITE_dti": 1.0,
+    "PLAUSIBILITE_income": 1.0,
+    "PLAUSIBILITE_rate": 1.0,
+    "VALIDITE_issue_date": 1.0,
+    "VALIDITE_term": 1.0
+  }
+}

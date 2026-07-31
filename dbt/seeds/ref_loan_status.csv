@@ -1,0 +1,8 @@
+loan_status,status_group,is_default,is_performing
+Fully Paid,Closed,false,true
+Current,Open,false,true
+Charged Off,Closed,true,false
+Late (31-120 days),Open,false,false
+In Grace Period,Open,false,true
+Late (16-30 days),Open,false,false
+Default,Open,true,false

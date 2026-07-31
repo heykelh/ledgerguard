@@ -5,6 +5,7 @@ config-version: 2
 profile: 'ledgerguard'
 
 model-paths: ["models"]
+seed-paths: ["seeds"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
@@ -14,4 +15,8 @@ vars:
 models:
   ledgerguard:
     staging:
-      +materialized: table   # bronze matérialisé en table = le CSV n'est lu qu'une fois
+      +materialized: table
+    intermediate:
+      +materialized: table
+    quality:
+      +materialized: table

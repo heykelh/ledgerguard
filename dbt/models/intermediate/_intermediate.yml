@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: int_loans_typed
+    description: "Silver typé + normalisé, avec flags de contrôle et is_valid / dq_reasons."
+
+  - name: int_loans_conformed
+    description: >
+      Silver conforme — enregistrements valides uniquement. Les tests passent
+      par construction : ils prouvent que le portail qualité fonctionne.
+    columns:
+      - name: loan_sk
+        tests:
+          - not_null
+          - unique
+      - name: loan_amount
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                inclusive: false
+      - name: loan_status
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('ref_loan_status')
+                field: loan_status
+      - name: term_months
+        tests:
+          - accepted_values:
+              arguments:
+                values: [36, 60]
+                quote: false
+      - name: dti
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 100
+      - name: interest_rate
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 40
